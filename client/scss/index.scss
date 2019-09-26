@@ -34,7 +34,13 @@ header {
 }
 .card {
   min-width: 300px;
+
   margin-bottom: 20px;
+
+  img {
+    max-height: 205px;
+    width: auto;
+  }
 }
 
 .card-body {
