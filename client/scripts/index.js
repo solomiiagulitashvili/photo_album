@@ -7,4 +7,10 @@ import "../scss/index.scss";
 import "./rendering.js";
 import "./data.js";
 import "./button.js";
-// $("#exampleModalCenter").modal();
+var onLoad = function(PhotoArr) {
+  window.rendering(PhotoArr);
+};
+var onError = function(errorMessage) {
+  alert(errorMessage);
+};
+window.data.load(onLoad, onError);

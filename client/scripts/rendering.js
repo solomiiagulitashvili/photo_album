@@ -5,6 +5,12 @@
     .content.querySelector(".cardOfPhoto");
 
   var rendering = function(PhotoArr) {
+    if (PhotoArr.length === 0) {
+      var message = document.createElement("P");
+      message.textContent = "No photos received";
+      randomPhoto.appendChild(message);
+      return;
+    }
     var fragment = document.createDocumentFragment();
     PhotoArr.forEach(function(photo) {
       var img = photoTemplate.cloneNode(true);
