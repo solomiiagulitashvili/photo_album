@@ -14,3 +14,16 @@ var onError = function(errorMessage) {
   alert(errorMessage);
 };
 window.data.load(onLoad, onError);
+
+var onPostLoad = function(res) {
+  console.log(res);
+};
+var onPostError = function(errorMessage) {
+  alert(errorMessage);
+};
+var form = document.querySelector(".add-photo");
+form.addEventListener("submit", function(evt) {
+  evt.preventDefault();
+  window.data.save(new FormData(form), onPostLoad, onPostError);
+  console.log("submitted");
+});

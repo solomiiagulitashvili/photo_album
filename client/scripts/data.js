@@ -19,6 +19,27 @@
       });
       xhr.open("GET", URL);
       xhr.send();
+    },
+
+    save: function(data, onLoad, onError) {
+      var URL = "/api/photos";
+      var xhr = new XMLHttpRequest();
+      xhr.responseType = "json";
+
+      xhr.addEventListener("load", function() {
+        if (xhr.status === 200) {
+          onLoad(xhr.response);
+          console.log("posted");
+        } else {
+          onError(xhr.status + " " + xhr, this.statusText);
+          console.log("error");
+        }
+      });
+      xhr.addEventListener("error", function(errorMessage) {
+        onError(errorMessage);
+      });
+      xhr.open("POST", URL);
+      xhr.send(data);
     }
   };
 })();
