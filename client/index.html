@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <meta name="google-signin-client_id" content="354661702801-sgnfs21bk3dr08i3bk2peknkec38p82v.apps.googleusercontent.com">
     <title>Document</title>
+    
   </head>
   <body>
     <header class="container-fluid sticky-top">
@@ -149,11 +150,12 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form>
+                  <form class='add-photo' method="post">
                     <div class="form-group">
                       <label for="exampleFormControlFile1">Choose photo from gallery</label>
-                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                      <input type="file" name='photo' class="form-control-file" id="exampleFormControlFile1">
                     </div>
+                    <button type='submit' class='btn btn-primary submit'>Choose</button>
                   </form>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Or take one via webcam</button>
             </div>
