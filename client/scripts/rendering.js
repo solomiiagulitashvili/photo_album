@@ -18,6 +18,9 @@
       img.querySelector(".likes-amount").textContent = photo.likes;
 
       fragment.appendChild(img);
+      if (randomPhoto.hasChildNodes()) {
+        randomPhoto.removeChild(randomPhoto.childNodes[0]);
+      }
     });
 
     randomPhoto.appendChild(fragment);

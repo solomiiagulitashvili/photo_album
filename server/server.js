@@ -23,7 +23,7 @@ MongoClient.connect(url, function(err, client) {
     path.extname(req.file.originalname);
     var extension = path.extname(req.file.originalname);
     console.log(extension);
-    if (extension !== ".jpg" || extension !== ".jpeg") {
+    if (extension !== ".jpg" && extension !== ".jpeg") {
       res.status(406).send("We accept only jpg files");
       return;
     }
